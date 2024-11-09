@@ -4,26 +4,31 @@
   grid-template-rows: 40% 60%;
   height: 100vh;
   width: 100%;
-  
 }
+
 .image {
   display: flex;
   align-items: start;
   justify-content: center;
-  
 }
 
 .imageLight {
   background-image: url("../assets/bg-desktop-light.jpg");
+  transition: .3s ease-in-out;
+
 
 }
 .imageDark {
   background-image: url("../assets/bg-desktop-dark.jpg");
+  transition: .3s ease-in-out;
+
 
 }
+
 .backgroundDark {
   background-color: hsl(235, 24%, 19%);
 }
+
 .backgroundLight {
   background-color: white;
 }

@@ -9,19 +9,22 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
 import { InputComponent } from './components/input/input/input.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     ButtonHeaderComponent,
-    InputComponent
+    InputComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    HttpClientModule
+
   ],
   providers: [
     provideAnimationsAsync()

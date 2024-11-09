@@ -10,5 +10,5 @@ import { Component } from '@angular/core';
   styleUrl: './button-header.component.css'
 })
 export class ButtonHeaderComponent {
-
+  
 }

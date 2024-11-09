@@ -1,0 +1,7 @@
+::ng-deep .bgDark .mdc-text-field--filled:not(.mdc-text-field--disabled) {
+    background-color: hsl(235, 24%, 19%) !important ;
+}
+
+::ng-deep .mat-mdc-text-field-wrapper {
+    width: 400px !important ;
+}

@@ -7,4 +7,6 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'to-do-list';
+  api = 'https://crudcrud.com/api/a414f0c1b6544d84900b3eb155d0a5f0'
+  
 }

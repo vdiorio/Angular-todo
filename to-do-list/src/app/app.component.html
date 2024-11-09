@@ -18,7 +18,10 @@
     >
     
     <ng-container *ngFor="let task of listTaskService.listTasks">
-      <button (click)="removerTask(task._id)">ID: {{ task._id }}</button>
+      <div class="d-flex-col">
+        <span>{{'Tarefa: ' + task.task}} <button (click)="removerTask(task._id)">Remover</button></span>
+
+      </div>
     </ng-container>
     
   </div>

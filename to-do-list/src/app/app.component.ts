@@ -3,6 +3,7 @@ import { ThemeService } from './services/theme.service';
 import { HttpClient } from '@angular/common/http';
 import { ApiService } from './services/api.service';
 import { ITaskReturn } from './models/taskReturn.interface';
+import { ListTaskService } from './services/list-task.service';
 
 @Component({
   selector: 'app-root',
@@ -10,21 +11,22 @@ import { ITaskReturn } from './models/taskReturn.interface';
   styleUrl: './app.component.css'
 })
 export class AppComponent implements OnInit{
-  listTasks: ITaskReturn[] = []
-  constructor(protected themeService: ThemeService, protected apiService: ApiService) {}
-
+  constructor(protected themeService: ThemeService, protected apiService: ApiService, protected listTaskService: ListTaskService) {}
+  
   ngOnInit(): void {
-    this.apiService.puxarTasks().subscribe({
-      next: (value: ITaskReturn[]) => {
-        this.listTasks = value
-        console.log(this.listTasks)
-      }
-      ,
-      error: (error: any) => error,
-    })
-    
+    this.listTaskService.atualizaList()
   }
   
+  removerTask (id: string) {
+    this.apiService.removerTask(id).subscribe({
+      next: () => this.listTaskService.atualizaList(),
+      complete: () => {
+        this.listTaskService.listTasks.filter(task => task._id !== id)
+        console.log(this.listTaskService.listTasks)
+        this.listTaskService.atualizaList()
+      },
+    })
+  }
 
 
 }

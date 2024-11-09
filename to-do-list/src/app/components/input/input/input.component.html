@@ -8,7 +8,7 @@
       value=""
       [(ngModel)]="objTask.task"
       name="task"
-      (keyup.enter)="postReq()"
+      (keyup.enter)="postReq(objTask)"
     />
   <mat-spinner *ngIf="isLoading"></mat-spinner>
 

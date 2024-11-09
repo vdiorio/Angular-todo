@@ -1,13 +1,20 @@
 <main class="mainMaster">
   <div class="main">
-    <div class="image" [ngClass]="{
-      'imageDark': themeService.isDark,
-      'imageLight': !themeService.isDark
-    }"><app-header/></div>
-    <div [ngClass]="{
+    <div
+      class="image"
+      [ngClass]="{
+        imageDark: themeService.isDark,
+        imageLight: !themeService.isDark
+      }"
+    >
+      <app-header />
+      <app-input></app-input>
+    </div>
+    <div
+      [ngClass]="{
       'backgroundDark': themeService.isDark,
       'backgroundLight': !themeService.isDark,
-    }"></div>
+    }"
+    ></div>
   </div>
-
-  </main>
+</main>

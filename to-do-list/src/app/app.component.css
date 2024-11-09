@@ -8,8 +8,10 @@
 
 .image {
   display: flex;
-  align-items: start;
+  align-items: center;
   justify-content: center;
+  transition: .3s ease-in-out;
+  flex-direction: column;
 }
 
 .imageLight {
@@ -21,8 +23,6 @@
 .imageDark {
   background-image: url("../assets/bg-desktop-dark.jpg");
   transition: .3s ease-in-out;
-
-
 }
 
 .backgroundDark {

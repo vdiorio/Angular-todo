@@ -1,0 +1,19 @@
+.mainMaster{
+  display: flex;
+  align-items: center;
+}
+
+.main {
+  display: grid;
+  grid-template-rows: 40% 60%;
+  height: 100vh;
+  width: 100%;
+  
+}
+.image {
+  background-image: url("../assets/bg-desktop-dark.jpg");
+  
+}
+.backgroungDarck {
+  background-color: hsl(235, 24%, 19%);
+}

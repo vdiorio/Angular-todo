@@ -1,27 +1,30 @@
-# ToDoList
+**Angular I - Projeto final**
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.10.
+**O que?**
 
-## Development server
+Desenvolver, utilizando os conceitos abordados ao longo do módulo, uma aplicação de lista de tarefas (ToDo List).
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+**Requisitos**
+Dentre as funcionalidades, espera-se que seja possível:
 
-## Code scaffolding
+[ ] Adicionar uma tarefa.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+[ ] Editar uma tarefa salva.
 
-## Build
+[ ] Remover uma tarefa salva.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+[ ] Listar todas as tarefas salvas.
 
-## Running unit tests
+[ ] Além do CRUD de tarefas, espera-se que:
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+No formulário de cadastro e edição, sejam validados os dados inseridos nos campos, quanto à obrigatoriedade, e demais validações que julgarem necessárias.
 
-## Running end-to-end tests
+A data, na tela inicial, será a data atual do sistema e a hora será atualizada a cada minuto
+Entrega e apresentação
+Apresentação na última aula, dia 11/11 Entrega do link do repositório até o dia posterior à última aula (12/11)
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+**Observações**
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+O layout proposto se encontra neste vídeo
+Não é necessário implementar a versão para desktop
+Para a persistência das tarefas, utilizaremos uma API, que poderá ser criada em: CrudCrud.

@@ -1,8 +1,14 @@
-    <form class="example-form">
-        <mat-form-field class="example-full-width">
-          <mat-label>Escreva uma tarefa</mat-label>
-          <input matInput placeholder="Ex. Arrumar a casa" value="">
-        </mat-form-field>
-      
-        
-    </form>
+<form class="example-form">
+  <mat-form-field class="example-full-width">
+    <mat-label>Escreva uma tarefa</mat-label>
+    <input
+      matInput
+      placeholder="Ex. Arrumar a casa"
+      value=""
+      [(ngModel)]="objTask.task"
+      name="task"
+      (keyup.enter)="postReq()"
+    />
+  </mat-form-field>
+  <mat-spinner *ngIf="isLoading"></mat-spinner>
+</form>

@@ -8,10 +8,8 @@ import { ApiService } from './services/api.service';
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
-export class AppComponent implements OnInit {
-  constructor(protected themeService: ThemeService, protected apiService: ApiService, private http: HttpClient) {}
+export class AppComponent {
+  
+  constructor(protected themeService: ThemeService, protected apiService: ApiService) {}
 
-    ngOnInit(): void {
-      console.log(this.http.get(this.apiService.api))
-    }
 }

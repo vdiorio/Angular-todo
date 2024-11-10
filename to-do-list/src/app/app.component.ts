@@ -10,14 +10,15 @@ import { ListTaskService } from './services/list-task.service';
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
-export class AppComponent implements OnInit{
-  constructor(protected themeService: ThemeService, protected apiService: ApiService, protected listTaskService: ListTaskService) {}
-  
+export class AppComponent implements OnInit {
+  appInput = { task: "" }
+  constructor(protected themeService: ThemeService, protected apiService: ApiService, protected listTaskService: ListTaskService) { }
+
   ngOnInit(): void {
     this.listTaskService.atualizaList()
   }
-  
-  removerTask (id: string) {
+
+  removerTask(id: string) {
     this.apiService.removerTask(id).subscribe({
       next: () => this.listTaskService.atualizaList(),
       complete: () => {
@@ -27,6 +28,15 @@ export class AppComponent implements OnInit{
       },
     })
   }
+  putReq(id: string, payload: { task: string }) {
+    this.apiService.atualizarTask(id, payload).subscribe({
+      error: (err: any) => console.log(err),
+      complete: () => {
+        this.listTaskService.atualizaList()
+        this.appInput.task = ""
+      }})
 
+
+  }
 
 }

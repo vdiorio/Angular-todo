@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ThemeService } from './services/theme.service';
-import { HttpClient } from '@angular/common/http';
 import { ApiService } from './services/api.service';
-import { ITaskReturn } from './models/taskReturn.interface';
 import { ListTaskService } from './services/list-task.service';
 
 @Component({
@@ -28,6 +26,15 @@ export class AppComponent implements OnInit{
       },
     })
   }
-
+  putReq(id: string, payload: { task: string }) {
+    this.apiService.atualizarTask(id, payload).subscribe({
+      error: (err: any) => console.log(err),
+      complete: () => {
+        this.listTaskService.atualizaList()
+        this.appInput.task = ""
+      }})
+  }
+  openDialog()
+ {this.isOpenModal = true}
 
 }

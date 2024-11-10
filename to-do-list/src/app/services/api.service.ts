@@ -1,14 +1,13 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { ITaskReturn } from '../models/taskReturn.interface';
-import { Observable } from 'rxjs';
 import { ITask } from '../models/task.interface';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ApiService {
-  api = 'https://crudcrud.com/api/f209d0f0af77429780cadb74beea0312/tasks';
+  api = 'https://crudcrud.com/api/fb54df8142434006b48864b239b795da/task';
 
   constructor(private http: HttpClient) {}
 
@@ -17,13 +16,24 @@ export class ApiService {
       headers: { 'Content-Type': 'application/json' },
     });
   }
+  atualizarTask( id:string, payload: {task: string}){
+    return this.http.put<void>(`${this.api}/${id}`,payload)
+  }
 
+<<<<<<< HEAD
   puxarTasks() {
+=======
+  puxarTasks(){
+>>>>>>> 7dd78a0760d11c7d61d398a13e267891399b0354
     return this.http.get<ITaskReturn[]>(this.api);
   }
 
   removerTask(id: string) {
-    return this.http.delete<string>(`${this.api}/${id}`);
+    return this.http.delete<void>(`${this.api}/${id}`);
   }
+<<<<<<< HEAD
 
+=======
+  
+>>>>>>> 7dd78a0760d11c7d61d398a13e267891399b0354
 }

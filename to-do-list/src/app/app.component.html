@@ -20,7 +20,22 @@
     <ng-container *ngFor="let task of listTaskService.listTasks">
       <div class="d-flex-col">
         <span>{{'Tarefa: ' + task.task}} <button (click)="removerTask(task._id)">Remover</button></span>
-
+        <mat-form-field [ngClass]="{
+          'bgDark': themeService.isDark
+        }">
+        <li>
+          <button mat-raised-button (click)="openDialog()">Atualizar tarefa</button>
+        </li>
+        <li *ngIf="isOpenModal">
+          <input
+          matInput
+          value=""
+          [(ngModel)]="appInput.task"
+          name="task"
+          (keyup.enter)="putReq(task._id,appInput)"
+        />
+        </li>
+        </mat-form-field>
       </div>
     </ng-container>
     

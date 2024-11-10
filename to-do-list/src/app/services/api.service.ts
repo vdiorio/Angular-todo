@@ -7,7 +7,7 @@ import { ITask } from '../models/task.interface';
   providedIn: 'root',
 })
 export class ApiService {
-  api = 'https://crudcrud.com/api/fb54df8142434006b48864b239b795da/task';
+  api = 'https://crudcrud.com/api/da19b41019104cba8216142e6d5a77d8/task';
 
   constructor(private http: HttpClient) {}
 
@@ -20,20 +20,11 @@ export class ApiService {
     return this.http.put<void>(`${this.api}/${id}`,payload)
   }
 
-<<<<<<< HEAD
   puxarTasks() {
-=======
-  puxarTasks(){
->>>>>>> 7dd78a0760d11c7d61d398a13e267891399b0354
     return this.http.get<ITaskReturn[]>(this.api);
   }
 
   removerTask(id: string) {
     return this.http.delete<void>(`${this.api}/${id}`);
   }
-<<<<<<< HEAD
-
-=======
-  
->>>>>>> 7dd78a0760d11c7d61d398a13e267891399b0354
 }

@@ -9,6 +9,10 @@ import { ListTaskService } from './services/list-task.service';
   styleUrl: './app.component.css'
 })
 export class AppComponent implements OnInit{
+  appInput = {
+    task: ''
+  }
+  isOpenModal = false
   constructor(protected themeService: ThemeService, protected apiService: ApiService, protected listTaskService: ListTaskService) {}
 
   ngOnInit(): void {

@@ -13,12 +13,14 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule,  } from '@angular/forms';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import {MatDialogModule} from '@angular/material/dialog';
+import { DialogatualizartaskComponent } from './components/dialogatualizartask/dialogatualizartask.component';
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     ButtonHeaderComponent,
     InputComponent,
+    DialogatualizartaskComponent,
   ],
   imports: [
     BrowserModule,

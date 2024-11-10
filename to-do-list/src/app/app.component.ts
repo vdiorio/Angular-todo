@@ -12,6 +12,7 @@ import { ListTaskService } from './services/list-task.service';
 })
 export class AppComponent implements OnInit {
   appInput = { task: "" }
+  isOpenModal = false
   constructor(protected themeService: ThemeService, protected apiService: ApiService, protected listTaskService: ListTaskService) { }
 
   ngOnInit(): void {
@@ -35,8 +36,8 @@ export class AppComponent implements OnInit {
         this.listTaskService.atualizaList()
         this.appInput.task = ""
       }})
-
-
   }
+  openDialog()
+ {this.isOpenModal = true}
 
 }

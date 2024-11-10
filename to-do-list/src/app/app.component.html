@@ -23,14 +23,18 @@
         <mat-form-field [ngClass]="{
           'bgDark': themeService.isDark
         }">
-          <mat-label>Atualize uma tarefa</mat-label>
+        <li>
+          <button mat-raised-button (click)="openDialog()">Atualizar tarefa</button>
+        </li>
+        <li *ngIf="isOpenModal">
           <input
-            matInput
-            value=""
-            [(ngModel)]="appInput.task"
-            name="task"
-            (keyup.enter)="putReq(task._id,appInput)"
-          />
+          matInput
+          value=""
+          [(ngModel)]="appInput.task"
+          name="task"
+          (keyup.enter)="putReq(task._id,appInput)"
+        />
+        </li>
         </mat-form-field>
       </div>
     </ng-container>

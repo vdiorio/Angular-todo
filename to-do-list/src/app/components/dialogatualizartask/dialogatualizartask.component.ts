@@ -22,9 +22,6 @@ export class DialogatualizartaskComponent {
     protected listTaskService: ListTaskService
   ) {}
 
-  openDialog() {
-    this.isOpenModal = true;
-  }
 
   putReq(id: string, payload: { task: string }) {
     this.apiService.atualizarTask(id, payload).subscribe({

@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ThemeService } from './services/theme.service';
 import { ApiService } from './services/api.service';
 import { ListTaskService } from './services/list-task.service';
+import { MatDialog } from '@angular/material/dialog';
+import { DialogatualizartaskComponent } from './components/dialogatualizartask/dialogatualizartask.component';
 
 @Component({
   selector: 'app-root',
@@ -9,11 +11,9 @@ import { ListTaskService } from './services/list-task.service';
   styleUrl: './app.component.css'
 })
 export class AppComponent implements OnInit{
-  appInput = {
-    task: ''
-  }
+  
   isOpenModal = false
-  constructor(protected themeService: ThemeService, protected apiService: ApiService, protected listTaskService: ListTaskService) {}
+  constructor(protected themeService: ThemeService, protected apiService: ApiService, protected listTaskService: ListTaskService, private dialog: MatDialog) {}
 
   ngOnInit(): void {
     this.listTaskService.atualizaList()
@@ -30,15 +30,8 @@ export class AppComponent implements OnInit{
       },
     })
   }
-  putReq(id: string, payload: { task: string }) {
-    this.apiService.atualizarTask(id, payload).subscribe({
-      error: (err: any) => console.log(err),
-      complete: () => {
-        this.listTaskService.atualizaList()
-        this.appInput.task = ""
-      }})
+  
+  openDialog () {
+    this.dialog.open(DialogatualizartaskComponent)
   }
-  openDialog()
- {this.isOpenModal = true}
-
 }

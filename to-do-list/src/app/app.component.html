@@ -19,8 +19,10 @@
     
     <ng-container *ngFor="let task of listTaskService.listTasks">
       <div class="d-flex-col">
-        <span>{{'Tarefa: ' + task.task}} <button (click)="removerTask(task._id)">Remover</button></span>
-        
+        <div class="d-flex">
+          <span>{{'Tarefa: ' + task.task}} <button (click)="removerTask(task._id)">Remover</button></span>
+          <button (click)="openDialog()">Atualizar Tarefa</button>
+        </div>
       </div>
     </ng-container>
     

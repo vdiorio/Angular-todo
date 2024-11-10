@@ -12,18 +12,19 @@ import { ListTaskService } from './services/list-task.service';
 })
 export class AppComponent implements OnInit{
   constructor(protected themeService: ThemeService, protected apiService: ApiService, protected listTaskService: ListTaskService) {}
-  
+
   ngOnInit(): void {
     this.listTaskService.atualizaList()
   }
   
   removerTask (id: string) {
-    this.apiService.removerTask(id).subscribe({
-      next: () => this.listTaskService.atualizaList(),
-      complete: () => {
-        this.listTaskService.listTasks.filter(task => task._id !== id)
-        console.log(this.listTaskService.listTasks)
+    const subsRemove = this.apiService.removerTask(id).subscribe({
+      next: () => {
+        this.listTaskService.listTasks = this.listTaskService.listTasks.filter(task => task._id !== id)
         this.listTaskService.atualizaList()
+      },
+      complete() {
+        subsRemove.unsubscribe()
       },
     })
   }

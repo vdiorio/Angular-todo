@@ -18,11 +18,12 @@ export class ApiService {
     });
   }
 
-  puxarTasks(): Observable<any> {
+  puxarTasks() {
     return this.http.get<ITaskReturn[]>(this.api);
   }
 
   removerTask(id: string) {
     return this.http.delete<string>(`${this.api}/${id}`);
   }
+
 }

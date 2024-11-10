@@ -4,9 +4,6 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class ThemeService {
-
-  constructor() { }
-
   isDark = true
 
   setTheme () {

@@ -10,9 +10,16 @@
       bgDark: themeService.isDark
     }"
   >
+    <mat-label
+      [ngClass]="{
+        'color-white': themeService.isDark,
+        'color-black': !themeService.isDark
+      }"
+    >
+      Escreva uma tarefa
+    </mat-label>
     <input
       matInput
-      placeholder="Atualizar sua tarefa"
       [(ngModel)]="appInput.task"
       [ngClass]="{
         'color-white': themeService.isDark,

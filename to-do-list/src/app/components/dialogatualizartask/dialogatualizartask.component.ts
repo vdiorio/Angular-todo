@@ -1,9 +1,8 @@
-import { Component, Inject, Input } from '@angular/core';
+import { Component, Inject } from '@angular/core';
 import { ThemeService } from '../../services/theme.service';
 import { ApiService } from '../../services/api.service';
 import { ListTaskService } from '../../services/list-task.service';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { ITask } from '../../models/task.interface';
 import { ITaskReturn } from '../../models/taskReturn.interface';
 
 @Component({

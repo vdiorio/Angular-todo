@@ -7,6 +7,7 @@ import { DialogatualizartaskComponent } from './components/dialogatualizartask/d
 import { ITaskReturn } from './models/taskReturn.interface';
 import { TimerService } from './services/timer.service';
 import { IHours } from './models/hours.interface';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -21,7 +22,7 @@ export class AppComponent implements OnInit{
   
   ngOnInit(): void {
     this.listTaskService.atualizaList()
-    const myTime = this.timerService.hours.subscribe({
+    const myTime: Subscription = this.timerService.hours.subscribe({
       next: (value: IHours) => this.hours = value,
       complete: () => myTime.unsubscribe()
     })

@@ -7,7 +7,7 @@ import { ITask } from '../models/task.interface';
   providedIn: 'root',
 })
 export class ApiService {
-  api = 'https://crudcrud.com/api/5048403dcd9c4e0d82520bbad70a4e52/tasks';
+  api = 'https://crudcrud.com/api/3c4ae5ad571b409f88f080e17cffde7d/tasks';
 
   constructor(private http: HttpClient) {}
 

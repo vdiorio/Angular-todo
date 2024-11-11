@@ -29,7 +29,6 @@
 
 ::ng-deep .dialog.dialog-text-area .mdc-text-field--filled:not(.mdc-text-field--disabled) {
   width: 300px;
-  height: 150px;
 }
 
 mat-label {

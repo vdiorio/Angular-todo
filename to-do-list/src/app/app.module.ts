@@ -14,7 +14,8 @@ import { FormsModule,  } from '@angular/forms';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import {MatDialogModule} from '@angular/material/dialog';
 import { DialogatualizartaskComponent } from './components/dialogatualizartask/dialogatualizartask.component';
-import {MatButtonModule} from '@angular/material/button'
+import {MatButtonModule} from '@angular/material/button';
+import { HoursPipe } from './pipes/hours.pipe'
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,6 +23,7 @@ import {MatButtonModule} from '@angular/material/button'
     ButtonHeaderComponent,
     InputComponent,
     DialogatualizartaskComponent,
+    HoursPipe,
   ],
   imports: [
     BrowserModule,

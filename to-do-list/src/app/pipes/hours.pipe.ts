@@ -12,6 +12,6 @@ export class HoursPipe implements PipeTransform {
       hourFormated.length === 1 ? `0${hourFormated}` : hourFormated;
     const minuteFinal =
       minuteFormated.length === 1 ? `0${minuteFormated}` : minuteFormated;
-    return `As horas são: ${hourFinal}:${minuteFinal}`;
+    return `Horas: ${hourFinal}:${minuteFinal}`;
   }
 }

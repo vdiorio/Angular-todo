@@ -25,30 +25,29 @@
       'backgroundLight': !themeService.isDark,
     }"
     >
-      <div class="d-flex-col">
+      <div class="d-flex-col" style="width: 80%">
         <ng-container *ngFor="let task of listTaskService.listTasks">
-          <div class="d-flex">
+          <div class="d-flex task">
             <div class="taskAdic">
               <span>{{ "Tarefa: " + task.task }} </span>
-             
             </div>
-           <div class="button-atualizar-deletar">
-            <button 
-            mat-raised-button
-            color="warn"
-            [ngClass]="{ bgLaghtButton: !themeService.isDark }"
-            (click)="removerTask(task._id)"
-          >
-            Remover
-          </button>
-          <button
-          mat-raised-button
-          color="primary"
-          (click)="openDialog(task)"
-        >
-          Atualizar
-        </button>
-           </div>
+            <div class="button-atualizar-deletar">
+              <button
+                mat-raised-button
+                color="warn"
+                [ngClass]="{ bgLaghtButton: !themeService.isDark }"
+                (click)="removerTask(task._id)"
+              >
+                Remover
+              </button>
+              <button
+                mat-raised-button
+                color="primary"
+                (click)="openDialog(task)"
+              >
+                Atualizar
+              </button>
+            </div>
           </div>
         </ng-container>
       </div>

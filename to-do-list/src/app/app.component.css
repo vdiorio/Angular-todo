@@ -6,6 +6,10 @@
   width: 100%;
 }
 
+.task-container {
+  width: 80vw;
+}
+
 .task {
   background-color: rgb(88, 62, 102);
   width: 100%;
@@ -45,4 +49,11 @@
   justify-content: space-between;
   display: flex;
   gap: 2rem;
+}
+
+@media (max-width: 600px) {
+  .task {
+    flex-direction: column;
+    align-items: center;
+  }
 }

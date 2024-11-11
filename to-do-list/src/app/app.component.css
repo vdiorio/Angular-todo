@@ -8,11 +8,11 @@
 
 .task-container {
   width: 80vw;
+  max-width: 100%;
 }
 
 .task {
   background-color: rgb(88, 62, 102);
-  width: 100%;
   padding: 6px 12px;
   border-radius: 8px;
   color: white;

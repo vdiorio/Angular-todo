@@ -1,4 +1,4 @@
 export interface IHours {
-    hour: number,
+    hour: number;
     minute: number
 }

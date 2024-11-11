@@ -2,9 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ThemeService } from './services/theme.service';
 import { ApiService } from './services/api.service';
 import { ListTaskService } from './services/list-task.service';
-import { MatDialog } from '@angular/material/dialog';
+import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { DialogatualizartaskComponent } from './components/dialogatualizartask/dialogatualizartask.component';
-import { ITask } from './models/task.interface';
 import { ITaskReturn } from './models/taskReturn.interface';
 
 @Component({
@@ -13,7 +12,6 @@ import { ITaskReturn } from './models/taskReturn.interface';
   styleUrl: './app.component.css'
 })
 export class AppComponent implements OnInit{
-  
   isOpenModal = false
   constructor(protected themeService: ThemeService, protected apiService: ApiService, protected listTaskService: ListTaskService, private dialog: MatDialog) {}
 
@@ -24,7 +22,6 @@ export class AppComponent implements OnInit{
   removerTask (id: string) {
     const subsRemove = this.apiService.removerTask(id).subscribe({
       next: () => {
-        this.listTaskService.listTasks = this.listTaskService.listTasks.filter(task => task._id !== id)
         this.listTaskService.atualizaList()
       },
       complete() {
@@ -34,8 +31,9 @@ export class AppComponent implements OnInit{
   }
   
   openDialog (task: ITaskReturn) {
-    this.dialog.open(DialogatualizartaskComponent, {
-      data: task
+     this.dialog.open(DialogatualizartaskComponent, {
+      data: task,
     })
+    
   }
 }

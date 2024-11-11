@@ -4,6 +4,7 @@ import { ApiService } from '../../services/api.service';
 import { ListTaskService } from '../../services/list-task.service';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { ITaskReturn } from '../../models/taskReturn.interface';
+import { ITask } from '../../models/task.interface';
 
 @Component({
   selector: 'app-dialogatualizartask',
@@ -11,7 +12,7 @@ import { ITaskReturn } from '../../models/taskReturn.interface';
   styleUrl: './dialogatualizartask.component.css',
 })
 export class DialogatualizartaskComponent {
-  appInput = {
+  appInput: ITask = {
     task: '',
   };
   isOpenModal = false;
@@ -24,14 +25,14 @@ export class DialogatualizartaskComponent {
   ) {}
 
 
-  putReq(payload: { task: string }) {
-    this.apiService.atualizarTask(this.task._id, payload).subscribe({
+  putReq(payload: ITask) {
+    const subsPut = this.apiService.atualizarTask(this.task._id, payload).subscribe({
       error: (err: any) => {console.log(err)
-        console.log(this.task._id)
       },
       complete: () => {
         this.listTaskService.atualizaList();
         this.appInput.task = '';
+        subsPut.unsubscribe()
       },
     });
   }

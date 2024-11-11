@@ -23,11 +23,12 @@ export class InputComponent {
     this.isLoading = true
 
     
-    this.apiService.adicionarTask(task).subscribe({
+    const subsPost = this.apiService.adicionarTask(task).subscribe({
       next: () => this.listTaskService.atualizaList(),
       complete:() => {
         this.isLoading = false
         this.objTask.task = ''
+        subsPost.unsubscribe()
       }
     })
   }

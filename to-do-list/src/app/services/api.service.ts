@@ -7,7 +7,7 @@ import { ITask } from '../models/task.interface';
   providedIn: 'root',
 })
 export class ApiService {
-  api = 'https://crudcrud.com/api/b5748b5470354066b9dfd94fed6ac109/tasks';
+  api = 'https://crudcrud.com/api/5f2218f368f44673b28c47cc621a9c92/tasks';
 
   constructor(private http: HttpClient) {}
 
@@ -16,7 +16,7 @@ export class ApiService {
       headers: { 'Content-Type': 'application/json' },
     });
   }
-  atualizarTask( id?:string, payload?: {task: string}){
+  atualizarTask( id:string, payload: ITask){
     return this.http.put<void>(`${this.api}/${id}`, payload)
   }
 

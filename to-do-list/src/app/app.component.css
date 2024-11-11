@@ -3,7 +3,6 @@
 .main {
   display: grid;
   grid-template-rows: 40% 60%;
-  height: 100vh;
   width: 100%;
 }
 
@@ -17,21 +16,25 @@
 .containerTask {
   display: flex;
   justify-content: center;
-  padding: 1rem;
+  height: 100vh;
+  
 }
 .taskAdic{
   gap: 2rem;
   display: flex;
   align-items: center;
+
 }
 .d-flex-col {
   display: flex;
   flex-direction: column;
-  gap: 3rem;
+  gap: 1rem;
+  padding-top: 1rem;
+
 }
 
 .d-flex {
   display: flex;
   gap: 2rem;
-  
+
 }

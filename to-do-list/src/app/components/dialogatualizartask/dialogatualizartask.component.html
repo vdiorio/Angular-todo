@@ -5,15 +5,17 @@
   }"
 >
   <mat-form-field
+  class="dialog dialog-text-area"
     [ngClass]="{
-      bgDark: themeService.isDark
+      'bgDark': themeService.isDark
     }"
   >
-    <textarea
+    <input
       matInput
+      placeholder="Escreva sua tarefa"
       [(ngModel)]="appInput.task"
       name="task"
       (keyup.enter)="putReq(appInput)"
-    ></textarea>
+    />
   </mat-form-field>
 </div>

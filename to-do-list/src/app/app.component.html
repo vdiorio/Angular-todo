@@ -10,7 +10,7 @@
       <app-header />
       <app-input></app-input>
     </div>
-    <div
+    <div class="containerTask"
       [ngClass]="{
       'backgroundDark': themeService.isDark,
       'backgroundLight': !themeService.isDark,
@@ -20,8 +20,10 @@
     <ng-container *ngFor="let task of listTaskService.listTasks">
       <div class="d-flex-col">
         <div class="d-flex">
-          <span>{{'Tarefa: ' + task.task}} <button (click)="removerTask(task._id)">Remover</button></span>
-          <button (click)="openDialog(task)">Atualizar Tarefa</button>
+          <div class="taskAdic"><span>{{'Tarefa: ' + task.task}} </span>
+            <button mat-raised-button color="warn" [ngClass]="{'bgLaghtButton': !themeService.isDark}"  (click)="removerTask(task._id)">Remover</button>
+          </div>
+          <button mat-raised-button color="primary" (click)="openDialog(task)">Atualizar Tarefa</button>
         </div>
       </div>
     </ng-container>

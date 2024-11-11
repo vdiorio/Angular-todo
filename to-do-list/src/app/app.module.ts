@@ -14,6 +14,7 @@ import { FormsModule,  } from '@angular/forms';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import {MatDialogModule} from '@angular/material/dialog';
 import { DialogatualizartaskComponent } from './components/dialogatualizartask/dialogatualizartask.component';
+import {MatButtonModule} from '@angular/material/button'
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,7 +31,8 @@ import { DialogatualizartaskComponent } from './components/dialogatualizartask/d
     HttpClientModule,
     FormsModule,
     MatProgressSpinnerModule,
-    MatDialogModule
+    MatDialogModule,
+    MatButtonModule
 
   ],
   providers: [

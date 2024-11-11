@@ -1,4 +1,4 @@
-@import './globalMaterial/styles.css';
+@import "./globalMaterial/styles.css";
 
 .main {
   display: grid;
@@ -11,16 +11,27 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: .3s ease-in-out;
+  transition: 0.3s ease-in-out;
   flex-direction: column;
 }
-
+.containerTask {
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+}
+.taskAdic{
+  gap: 2rem;
+  display: flex;
+  align-items: center;
+}
 .d-flex-col {
   display: flex;
   flex-direction: column;
+  gap: 3rem;
 }
 
 .d-flex {
   display: flex;
-  gap: 1rem;
+  gap: 2rem;
+  
 }

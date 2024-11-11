@@ -5,8 +5,10 @@
   .backgroundLight {
     background-color: white;
   }
-
-
+  
+::ng-deep .bgLaghtButton.mat-mdc-raised-button.mat-warn{
+  background-color: #b563a2;
+}
   .imageLight {
     background-image: url("../../assets/bg-desktop-light.jpg");
     transition: .3s ease-in-out;
@@ -25,4 +27,7 @@
 
 mat-label {
     color: hsl(234, 11%, 52%);
+}
+.mat-mdc-raised-button.mat-warn {
+  --mdc-protected-button-container-color: #793169;
 }

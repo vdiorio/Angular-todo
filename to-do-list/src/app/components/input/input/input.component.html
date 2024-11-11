@@ -7,11 +7,13 @@
   >
     <mat-label
       [ngClass]="{
-        color-white: themeService.isDark,
-        color-black: !themeService.isDark
+        'color-white': themeService.isDark,
+        'color-black': !themeService.isDark
       }"
-      >Escreva uma tarefa</mat-label
     >
+      Escreva uma tarefa
+    </mat-label>
+
     <input
       matInput
       value=""

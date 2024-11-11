@@ -1,21 +1,16 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { HttpClientModule } from '@angular/common/http';
 import { HeaderComponent } from './components/header/header.component';
 import { ButtonHeaderComponent } from './components/button-header/button-header.component';
-import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { InputComponent } from './components/input/input/input.component';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatInputModule } from '@angular/material/input';
-import { HttpClientModule } from '@angular/common/http';
-import { FormsModule,  } from '@angular/forms';
-import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
-import {MatDialogModule} from '@angular/material/dialog';
 import { DialogatualizartaskComponent } from './components/dialogatualizartask/dialogatualizartask.component';
-import {MatButtonModule} from '@angular/material/button';
 import { HoursPipe } from './pipes/hours.pipe'
+import { MaterialModule } from './modules/material/material.module';
+import { FormsModule,  } from '@angular/forms';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,18 +22,9 @@ import { HoursPipe } from './pipes/hours.pipe'
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
-    MatFormFieldModule,
-    MatInputModule,
     HttpClientModule,
     FormsModule,
-    MatProgressSpinnerModule,
-    MatDialogModule,
-    MatButtonModule
-
-  ],
-  providers: [
-    provideAnimationsAsync()
+    MaterialModule
   ],
   bootstrap: [AppComponent]
 })

@@ -16,7 +16,7 @@ export class DialogatualizartaskComponent {
     task: '',
   };
   isOpenModal = false;
-
+  isLoading = false
   constructor(
     protected themeService: ThemeService,
     private apiService: ApiService,
@@ -28,6 +28,7 @@ export class DialogatualizartaskComponent {
 
   putReq(payload: ITask) {
     if(payload.task === '') return alert('preencha o campo')
+      this.isLoading = true
     const subsPut = this.apiService.atualizarTask(this.task._id, payload).subscribe({
       error: (err: any) => {console.log(err)
       },
@@ -36,6 +37,7 @@ export class DialogatualizartaskComponent {
         this.appInput.task = '';
         subsPut.unsubscribe()
         this.dialogRef.close()
+        this.isLoading = false
       },
     });
   }

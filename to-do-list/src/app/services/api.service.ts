@@ -7,7 +7,7 @@ import { ITask } from '../models/task.interface';
   providedIn: 'root',
 })
 export class ApiService {
-  api = 'https://crudcrud.com/api/da19b41019104cba8216142e6d5a77d8/task';
+  api = 'https://crudcrud.com/api/a4d17fab999f47c0a9edc46790fca154/tasks';
 
   constructor(private http: HttpClient) {}
 
@@ -16,8 +16,8 @@ export class ApiService {
       headers: { 'Content-Type': 'application/json' },
     });
   }
-  atualizarTask( id:string, payload: {task: string}){
-    return this.http.put<void>(`${this.api}/${id}`,payload)
+  atualizarTask( id?:string, payload?: {task: string}){
+    return this.http.put<void>(`${this.api}/${id}`, payload)
   }
 
   puxarTasks() {

@@ -4,6 +4,8 @@ import { ApiService } from './services/api.service';
 import { ListTaskService } from './services/list-task.service';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogatualizartaskComponent } from './components/dialogatualizartask/dialogatualizartask.component';
+import { ITask } from './models/task.interface';
+import { ITaskReturn } from './models/taskReturn.interface';
 
 @Component({
   selector: 'app-root',
@@ -31,7 +33,9 @@ export class AppComponent implements OnInit{
     })
   }
   
-  openDialog () {
-    this.dialog.open(DialogatualizartaskComponent)
+  openDialog (task: ITaskReturn) {
+    this.dialog.open(DialogatualizartaskComponent, {
+      data: task
+    })
   }
 }

@@ -1,7 +1,10 @@
-import { Component, Input } from '@angular/core';
+import { Component, Inject, Input } from '@angular/core';
 import { ThemeService } from '../../services/theme.service';
 import { ApiService } from '../../services/api.service';
 import { ListTaskService } from '../../services/list-task.service';
+import { MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { ITask } from '../../models/task.interface';
+import { ITaskReturn } from '../../models/taskReturn.interface';
 
 @Component({
   selector: 'app-dialogatualizartask',
@@ -9,8 +12,6 @@ import { ListTaskService } from '../../services/list-task.service';
   styleUrl: './dialogatualizartask.component.css',
 })
 export class DialogatualizartaskComponent {
-
-  @Input({required: true, alias: 'idTask'}) idTask = ''
   appInput = {
     task: '',
   };
@@ -19,13 +20,16 @@ export class DialogatualizartaskComponent {
   constructor(
     protected themeService: ThemeService,
     private apiService: ApiService,
-    protected listTaskService: ListTaskService
+    protected listTaskService: ListTaskService,
+    @Inject(MAT_DIALOG_DATA) private task: ITaskReturn
   ) {}
 
 
-  putReq(id: string, payload: { task: string }) {
-    this.apiService.atualizarTask(id, payload).subscribe({
-      error: (err: any) => console.log(err),
+  putReq(payload: { task: string }) {
+    this.apiService.atualizarTask(this.task._id, payload).subscribe({
+      error: (err: any) => {console.log(err)
+        console.log(this.task._id)
+      },
       complete: () => {
         this.listTaskService.atualizaList();
         this.appInput.task = '';

@@ -1,11 +1,19 @@
-<mat-form-field [ngClass]="{
-    'bgDark': themeService.isDark
-  }">
-      <input
+<div
+  class="dialog-div"
+  [ngClass]="{
+    'bg-dark-dialog': themeService.isDark
+  }"
+>
+  <mat-form-field
+    [ngClass]="{
+      bgDark: themeService.isDark
+    }"
+  >
+    <textarea
       matInput
-      value=""
       [(ngModel)]="appInput.task"
       name="task"
-      (keyup.enter)="putReq(idTask, appInput)"
-    />
-</mat-form-field>
+      (keyup.enter)="putReq( appInput)"
+    ></textarea>
+  </mat-form-field>
+</div>

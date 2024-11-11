@@ -1,0 +1,11 @@
+.dialog-div {
+    width: 400px;
+    height: 400px;
+    display: flex;
+    justify-items: center;
+    align-items: center;
+}
+
+.bg-dark-dialog {
+    background-color: hsl(233, 14%, 35%);
+}

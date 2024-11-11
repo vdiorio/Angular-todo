@@ -1,0 +1,28 @@
+.backgroundDark {
+    background-color: hsl(235, 24%, 19%);
+  }
+  
+  .backgroundLight {
+    background-color: white;
+  }
+
+
+  .imageLight {
+    background-image: url("../../assets/bg-desktop-light.jpg");
+    transition: .3s ease-in-out;
+  
+  
+  }
+  .imageDark {
+    background-image: url("../../assets/bg-desktop-dark.jpg");
+    transition: .3s ease-in-out;
+  }
+
+::ng-deep .bgDark .mdc-text-field--filled:not(.mdc-text-field--disabled) {
+    background-color: hsl(235, 24%, 19%);
+}
+
+
+mat-label {
+    color: hsl(234, 11%, 52%);
+}

@@ -21,7 +21,7 @@
       <div class="d-flex-col">
         <div class="d-flex">
           <span>{{'Tarefa: ' + task.task}} <button (click)="removerTask(task._id)">Remover</button></span>
-          <button (click)="openDialog()">Atualizar Tarefa</button>
+          <button (click)="openDialog(task)">Atualizar Tarefa</button>
         </div>
       </div>
     </ng-container>

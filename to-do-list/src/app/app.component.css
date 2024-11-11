@@ -1,3 +1,4 @@
+@import './globalMaterial/styles.css';
 
 .main {
   display: grid;
@@ -12,25 +13,6 @@
   justify-content: center;
   transition: .3s ease-in-out;
   flex-direction: column;
-}
-
-.imageLight {
-  background-image: url("../assets/bg-desktop-light.jpg");
-  transition: .3s ease-in-out;
-
-
-}
-.imageDark {
-  background-image: url("../assets/bg-desktop-dark.jpg");
-  transition: .3s ease-in-out;
-}
-
-.backgroundDark {
-  background-color: hsl(235, 24%, 19%);
-}
-
-.backgroundLight {
-  background-color: white;
 }
 
 .d-flex-col {

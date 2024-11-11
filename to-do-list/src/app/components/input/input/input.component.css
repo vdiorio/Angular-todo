@@ -1,0 +1,12 @@
+.color-white {
+  color: white;
+}
+
+.color-black {
+  color: black;
+}
+
+.input-container {
+  width: 80vw !important;
+  min-width: 200px;
+}

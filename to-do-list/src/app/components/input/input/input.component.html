@@ -18,6 +18,10 @@
       matInput
       value=""
       [(ngModel)]="objTask.task"
+      [ngClass]="{
+        'color-white': themeService.isDark,
+        'color-black': !themeService.isDark
+      }"
       name="task"
       (keyup.enter)="postReq(objTask)"
     />

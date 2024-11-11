@@ -20,20 +20,26 @@
   
 }
 .taskAdic{
+  
   gap: 2rem;
   display: flex;
   align-items: center;
 
 }
 .d-flex-col {
+ 
   display: flex;
   flex-direction: column;
   gap: 1rem;
   padding-top: 1rem;
 
 }
-
+.button-atualizar-deletar{
+  gap: 5px;
+  display: flex;
+}
 .d-flex {
+  justify-content: space-between;
   display: flex;
   gap: 2rem;
 

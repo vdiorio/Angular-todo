@@ -8,7 +8,7 @@ import { IHours } from '../models/hours.interface';
 export class TimerService {
   
 
-  hours: Observable<IHours> = interval(1000).pipe(map(() => {
+  hours: Observable<IHours> = interval(15000).pipe(map(() => {
     const date = new Date()
     return { hour: date.getHours(), minute: date.getMinutes() }
   }))

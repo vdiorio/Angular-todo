@@ -18,7 +18,7 @@ export class AppComponent implements OnInit, OnDestroy{
   myTime = this.timerService.hours.subscribe({
     next: (value: IHours) => this.hours = value
   })
-  hours = {hour: new Date().getHours(), minute: new Date().getMinutes()} as IHours
+  hours = { hour: new Date().getHours(), minute: new Date().getMinutes() } as IHours
 
   constructor(protected timerService: TimerService,protected themeService: ThemeService, protected apiService: ApiService, protected listTaskService: ListTaskService, private dialog: MatDialog) {}
   

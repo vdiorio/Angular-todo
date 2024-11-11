@@ -1,5 +1,4 @@
 <main class="mainMaster">
-  <p></p>
   <div class="main">
     <div
       class="image"
@@ -8,6 +7,14 @@
         imageLight: !themeService.isDark
       }"
     >
+      <p
+        [ngClass]="{
+          hoursDark: themeService.isDark,
+          hoursLight: !themeService.isDark
+        }"
+      >
+        {{ hours.hour | hours : hours.minute }}
+      </p>
       <app-header />
       <app-input></app-input>
     </div>

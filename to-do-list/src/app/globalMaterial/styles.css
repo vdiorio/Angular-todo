@@ -1,38 +1,47 @@
 .backgroundDark {
-    background-color: hsl(235, 24%, 19%);
-  }
-  
-  .backgroundLight {
-    background-color: white;
-  }
-  
-::ng-deep .bgLaghtButton.mat-mdc-raised-button.mat-warn{
+  background-color: hsl(235, 24%, 19%);
+}
+
+.backgroundLight {
+  background-color: white;
+}
+
+::ng-deep .bgLaghtButton.mat-mdc-raised-button.mat-warn {
   background-color: #b563a2;
 }
-  .imageLight {
-    background-image: url("../../assets/bg-desktop-light.jpg");
-    transition: .3s ease-in-out;
-    background-repeat: no-repeat;
-    background-size: cover;
-  
-  }
-  .imageDark {
-    background-image: url("../../assets/bg-desktop-dark.jpg");
-    transition: .3s ease-in-out;
-    background-repeat: no-repeat;
-    background-size: cover;
-  }
-
-::ng-deep .bgDark .mdc-text-field--filled:not(.mdc-text-field--disabled) {
-    background-color: hsl(235, 24%, 19%);
+.imageLight {
+  background-image: url("../../assets/bg-desktop-light.jpg");
+  transition: 0.3s ease-in-out;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.imageDark {
+  background-image: url("../../assets/bg-desktop-dark.jpg");
+  transition: 0.3s ease-in-out;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
-::ng-deep .dialog.dialog-text-area .mdc-text-field--filled:not(.mdc-text-field--disabled) {
+.hoursDark {
+  color: black;
+  font-weight: bold;
+}
+.hoursLight {
+  color: white;
+  font-weight: bold;
+}
+::ng-deep .bgDark .mdc-text-field--filled:not(.mdc-text-field--disabled) {
+  background-color: hsl(235, 24%, 19%);
+}
+
+::ng-deep
+  .dialog.dialog-text-area
+  .mdc-text-field--filled:not(.mdc-text-field--disabled) {
   width: 300px;
 }
 
 mat-label {
-    color: hsl(234, 11%, 52%);
+  color: hsl(234, 11%, 52%);
 }
 .mat-mdc-raised-button.mat-warn {
   --mdc-protected-button-container-color: #793169;

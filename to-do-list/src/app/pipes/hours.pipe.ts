@@ -1,12 +1,17 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-  name: 'hours'
+  name: 'hours',
 })
 export class HoursPipe implements PipeTransform {
-
   transform(hour: number, minute: number): string {
-    return `As horas são: ${hour}:${minute}`;
-  }
+    const hourFormated = hour.toString();
+    const minuteFormated = minute.toString();
 
+    const hourFinal =
+      hourFormated.length === 1 ? `0${hourFormated}` : hourFormated;
+    const minuteFinal =
+      minuteFormated.length === 1 ? `0${minuteFormated}` : minuteFormated;
+    return `As horas são: ${hourFinal}:${minuteFinal}`;
+  }
 }

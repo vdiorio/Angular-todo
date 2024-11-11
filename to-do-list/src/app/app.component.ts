@@ -15,7 +15,8 @@ import { IHours } from './models/hours.interface';
 })
 export class AppComponent implements OnInit{
   isOpenModal = false
-  hours = {} as IHours
+  
+  hours = {hour: new Date().getHours(), minute: new Date().getMinutes()} as IHours
 
   constructor(protected timerService: TimerService,protected themeService: ThemeService, protected apiService: ApiService, protected listTaskService: ListTaskService, private dialog: MatDialog) {}
   

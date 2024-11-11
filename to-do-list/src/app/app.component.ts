@@ -7,28 +7,28 @@ import { DialogatualizartaskComponent } from './components/dialogatualizartask/d
 import { ITaskReturn } from './models/taskReturn.interface';
 import { TimerService } from './services/timer.service';
 import { IHours } from './models/hours.interface';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
-export class AppComponent implements OnInit, OnDestroy{
+export class AppComponent implements OnInit{
   isOpenModal = false
   hours = { hour: new Date().getHours(), minute: new Date().getMinutes() } as IHours
-  myTime = this.timerService.hours.subscribe({
-    next: (value: IHours) => this.hours = value
-  })
+  
   constructor(protected timerService: TimerService,protected themeService: ThemeService, protected apiService: ApiService, protected listTaskService: ListTaskService, private dialog: MatDialog) {}
   
   ngOnInit(): void {
     this.listTaskService.atualizaList()
+    const myTime: Subscription = this.timerService.hours.subscribe({
+      next: (value: IHours) => this.hours = value,
+      complete: () => myTime.unsubscribe()
+    })
     
   }
 
-  ngOnDestroy(): void {
-    this.myTime.unsubscribe()
-  }
 
   removerTask (id: string) {
     const subsRemove = this.apiService.removerTask(id).subscribe({

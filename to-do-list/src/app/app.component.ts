@@ -15,11 +15,10 @@ import { IHours } from './models/hours.interface';
 })
 export class AppComponent implements OnInit, OnDestroy{
   isOpenModal = false
+  hours = { hour: new Date().getHours(), minute: new Date().getMinutes() } as IHours
   myTime = this.timerService.hours.subscribe({
     next: (value: IHours) => this.hours = value
   })
-  hours = { hour: new Date().getHours(), minute: new Date().getMinutes() } as IHours
-
   constructor(protected timerService: TimerService,protected themeService: ThemeService, protected apiService: ApiService, protected listTaskService: ListTaskService, private dialog: MatDialog) {}
   
   ngOnInit(): void {
